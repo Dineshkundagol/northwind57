@@ -163,8 +163,9 @@ orders. However, there are some customers who've never placed an order
 with her. Show only those customers who have never placed an order
 with her.*/
 
-select customer_id from customers where customer_id not in (select distinct customers.customer_id from customers left join orders on  customers.customer_id=orders.customer_id
+select customer_id from customers 
+where customer_id not in (select distinct customers.customer_id from customers left join orders on  customers.customer_id=orders.customer_id
 where orders.employee_id  = 4);
 
 
-#27, 40
+
